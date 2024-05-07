@@ -1,0 +1,70 @@
+<main class="container">
+  <div class="input-control">
+    <form [formGroup]="sensorForm">
+      <div class="formGroup">
+        <div class="row">
+          <div class="col-md-3 mr-3">
+            <label for="titleLabel">Select the Sensor:</label>
+
+            <select
+              (change)="onSelectChange()"
+              [ngModel]="selectedItem"
+              id="select"
+              class="form-control form-select"
+              formControlName="sensor"
+            >
+              <option *ngFor="let item of sensorList" [ngValue]="item">
+                {{ item }}
+              </option>
+            </select>
+          </div>
+
+          <div class="col-md-3">
+            <label for="titleLabel">Sensitivity:</label>
+
+            <input
+              ngbAutofocus
+              onkeypress="return event.charCode >= 48"
+              min="1"
+              max="99"
+              type="number"
+              id="sensitivity"
+              class="form-control"
+              formControlName="sensitivity"
+              [ngClass]="
+                sensorForm.get('sensitivity')?.status == 'INVALID'
+                  ? 'validation'
+                  : ''
+              "
+              (change)="changeSensitivity()"
+            />
+          </div>
+
+          <div class="col-md-2">
+            <label for="titleLabel">Power ON/OFF:</label>
+            <div>
+              <span
+                class="form-control"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                [title]="sensorForm.get('isON')?.value ? 'Turn off' : 'Turn on'"
+                (click)="onClickPowerSensorIcon()"
+                [ngClass]="
+                  sensorForm.get('isON')?.value ? 'off-sensor' : 'on-sensor'
+                "
+                class="icon-power"
+                ><i class="pi pi-power-off"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="chart mt-5">
+    <div class="card">
+      <p-chart type="line" [data]="data" [options]="options" />
+    </div>
+  </div>
+</main>
