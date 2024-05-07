@@ -17,6 +17,7 @@
   .navbar-brand img {
     height: 1.6em;
   }
+
   .navbar-list {
     margin-left: 50px;
   }
@@ -29,6 +30,11 @@
 #page-top,
 .container-component {
   background: #12a4d9;
+
+  span {
+    color: white;
+    flex: 123;
+  }
 }
 
 .button-nav {
