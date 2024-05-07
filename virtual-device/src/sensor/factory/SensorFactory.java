@@ -31,7 +31,6 @@ public final class SensorFactory {
                     return instanceMap.get(sensorType);
                 }
 
-
             }
 
             default -> {

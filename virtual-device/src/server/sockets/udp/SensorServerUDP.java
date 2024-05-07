@@ -32,7 +32,7 @@ public class SensorServerUDP extends Thread {
                 MessageUDP messageUDP = new MessageUDP();
                 buf = messageUDP.handleMessage(received).getBytes();
 
-                System.out.println("Packet received: " + received);
+//                System.out.println("Packet received: " + received);
                 if (received.equals("end")) {
                     System.out.println("Closing...");
                     running = false;

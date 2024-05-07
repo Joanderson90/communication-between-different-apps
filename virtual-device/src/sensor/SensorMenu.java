@@ -95,15 +95,15 @@ public class SensorMenu extends Thread {
 
     private void showMenuOptionsSetSensitivitySensor(Sensor sensor) {
         clearTerminal();
-        System.out.println("-----------------------------------------" + "\n" +
+        System.out.println("---------------------------------------------------" + "\n" +
                 "SET SENSIVITY" + "\n" +
-                "-----------------------------------------" + "\n" +
+                "---------------------------------------------------" + "\n" +
                 "ENTER THE DESIRED SENSIVITY BETWEEN 1 AND 99: " + "\n" +
-                "-----------------------------------------");
+                "---------------------------------------------------");
 
         int value = in.nextInt();
 
-        if (value >= 0 && value < 99) {
+        if (value >= 0 && value <= 99) {
             sensor.setSensorSensitivity(value);
         } else {
             System.out.println("Invalid value!");
@@ -126,7 +126,9 @@ public class SensorMenu extends Thread {
 
         } else if (chosenOptionSensor == 4) {
             Sensor sensor = SensorFactory.getSensor(sensorType);
-            sensor.getData();
+
+            System.out.println("Generate data sensor: " + sensor.getSensorType());
+            System.out.printf("Generated data with value: %s with sensitivity: %s%n", sensor.getData(), sensor.getSensorSensitivity());
 
         }
     }

@@ -34,7 +34,7 @@ public class MessageUDP implements MessageI {
         }
 
 
-        System.out.println(Arrays.toString(messageArray));
+//        System.out.println(Arrays.toString(messageArray));
         return "DEFAULT_MESSAGE";
     }
 

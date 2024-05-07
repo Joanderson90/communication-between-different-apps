@@ -20,8 +20,8 @@ public class SensorSound extends Sensor {
         Double dataGenerated = this.isSensorON() ? new Random().nextFloat(this.getSensorSensitivity()) + 1.0 : 0.0;
         dataGenerated = Math.floor(dataGenerated * 100) / 100;
 
-        System.out.println("Generate data sensor: " + this.getSensorType());
-        System.out.printf("Generated data with value: %s with sensitivity: %s%n", dataGenerated, this.getSensorSensitivity());
+//        System.out.println("Generate data sensor: " + this.getSensorType());
+//        System.out.printf("Generated data with value: %s with sensitivity: %s%n", dataGenerated, this.getSensorSensitivity());
 
         return String.valueOf(dataGenerated);
     }
