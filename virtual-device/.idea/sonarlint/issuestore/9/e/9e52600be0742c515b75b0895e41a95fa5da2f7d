@@ -1,0 +1,8 @@
+
+	java:S116"eRename this field "DEFAULT_SENSOR_SENSITIVITY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÍĞ8Ÿ ò‹ò1
+>
+java:S1170"!Make this final field static too.(ˆÍĞ8Ÿ ò‹ò1
+L	java:S106"+Replace this use of System.out by a logger.(ÖâÊıùÿÿÿÿ8¢ ò‹ò1
+F	java:S106"+Replace this use of System.out by a logger.(ã¸œ(8¢ ò‹ò1
+G	java:S1064"+Replace this use of System.out by a logger.(ğÖúÕ8¤ ò‹ò1
+o	java:S1008"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£ƒÄıÿÿÿÿ8¤ ò‹ò1

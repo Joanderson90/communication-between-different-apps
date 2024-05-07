@@ -1,0 +1,7 @@
+
+h
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(÷ÊÍ“8±Ï‰Æï1
+A
+java:S1640"Convert this Map to an EnumMap.(äëôÖşÿÿÿÿ8²Ï‰Æï1
+y
+java:S3077"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(äëôÖşÿÿÿÿ8Ü”‹Æï1

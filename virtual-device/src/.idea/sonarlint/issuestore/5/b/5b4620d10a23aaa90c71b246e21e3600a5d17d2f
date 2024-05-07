@@ -1,0 +1,15 @@
+
+Œ
+java:S11928"jDefine a constant instead of duplicating this literal "-----------------------------------------" 9 times.(§°‹üÿÿÿÿ8êëè…õ1
+G	java:S1060"+Replace this use of System.out by a logger.(î¤×›8™ìè…õ1
+L	java:S1068"+Replace this use of System.out by a logger.(§°‹üÿÿÿÿ8šìè…õ1
+L	java:S106F"+Replace this use of System.out by a logger.(§°‹üÿÿÿÿ8ìè…õ1
+T
+java:S6126F"2Replace this String concatenation with Text block.(§°‹üÿÿÿÿ8ìè…õ1
+L	java:S106V"+Replace this use of System.out by a logger.(ï’—êùÿÿÿÿ8Ÿìè…õ1
+G	java:S106\"+Replace this use of System.out by a logger.(î¤×›8 ìè…õ1
+L	java:S106b"+Replace this use of System.out by a logger.(§°‹üÿÿÿÿ8¡ìè…õ1
+T
+java:S6126b"2Replace this String concatenation with Text block.(§°‹üÿÿÿÿ8¡ìè…õ1
+G	java:S106m"+Replace this use of System.out by a logger.(Å¡®±8¡ìè…õ1
+M	java:S106‰"+Replace this use of System.out by a logger.(ƒÇãˆúÿÿÿÿ8¥ìè…õ1

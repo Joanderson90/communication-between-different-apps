@@ -1,0 +1,17 @@
+version: "3"
+services:
+  server:
+    image: joanderson90/virtual-device:v1
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /app
+    ports:
+      - "4545:4545/tcp"
+      - "5555:5555/udp"
+    stdin_open: true 
+    tty: true
+    network_mode: "bridge"
+

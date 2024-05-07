@@ -1,0 +1,7 @@
+
+g	java:S112B"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¤¼åÆï1
+>
+java:S2189""Add an end condition to this loop.(¤èÄ78·¼åÆï1
+L
+java:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8¼¼åÆï1
+G	java:S106+"+Replace this use of System.out by a logger.(•»¾8À¼åÆï1
