@@ -29,7 +29,7 @@ O diagrama acima mostra o fluxo da troca de mensagem entre a interface, broker e
 Esta comunicação é feita através do protocolo HTTP, de forma que a interface realiza uma requisição para a API REST que foi construída o broker. A requisição pode ser uma GET ou POST. Irá ser um GET quando a interface necessitar obter os dados de um sensor específico e, um POST quando a interface precisar enviar um comando para um determinado sensor. Como os sensores não possuem capacidade para rodar em servidores HTTP, se fez necessário a utilização do broker para viabilizar a comunicação entre a interface e os servidores, que na arquitetura deste projeto também simula os sensores.
 
 #### Comunicação Broker e Dispositivo Virtual
-Neste caso, a comunicação é feita através do protocolo TCP e UDP. Para a implementação desse protocolo, foram utilizados os sockets nativos da linguagem Java.  O protocolo TCP foi utilizado para envio de comandos para o sensor, tal como, ligar, desligar e alterar a sensibilidade. Isso porque, o protocolo TCP é um protocolo confiável com relação ao envio e recebimento dos dados, o que o torna factível para troca de mensagens que envolvem comandos. Já o protocolo UDP, foi utilizado para envio dos dados do sensor para o broker, quando solicitados. Portanto, o broker atuou como cliente nesta comunicação e o dispositivo virtual como servidor, de forma que quando a troca de mensagem envolve envio de comandos, o broker se comunica com  servidor através do protocolo TCP, já quando envolve envio dos dados a comunicação foi feita através do protocolo UDP. Ademais, foi elaborado um protocolo de comunicação específico para realizar a tradução das mensagens entre estes dois sistemas.
+Neste caso, a comunicação é feita através dos protocolos TCP e UDP. Para a implementação desses protocolos, foram utilizados os sockets nativos da linguagem Java.  O protocolo TCP foi utilizado para envio de comandos para o sensor, tal como, ligar, desligar e alterar a sensibilidade. Isso porque, o protocolo TCP é um protocolo confiável com relação ao envio e recebimento dos dados, o que o torna factível para troca de mensagens que envolvem comandos. Já o protocolo UDP, foi utilizado para envio dos dados do sensor para o broker, quando solicitados. Portanto, o broker atuou como cliente nesta comunicação e o dispositivo virtual como servidor, de forma que quando a troca de mensagem envolve envio de comandos, o broker se comunica com  servidor através do protocolo TCP, já quando envolve envio dos dados a comunicação foi feita através do protocolo UDP. Ademais, foi elaborado um protocolo de comunicação específico para realizar a tradução das mensagens entre estes dois sistemas.
 
 #### Protocolo de comunicação
 Além dos protocolos TCP e UDP utilizados para realizar a comunicação citada na seção anterior, foi criado um protocolo para tradução das mensagens presente na comunicação entre o broker e dispositivo virtual, como no exemplo abaixo:
@@ -38,6 +38,30 @@ Além dos protocolos TCP e UDP utilizados para realizar a comunicação citada n
 ##### Resposta do dispositivo virtual: 
 - ```10.0,70.0,true```
 
-No exemplo acima, o broker envia uma mensagem, que corresponde a uma string, esta é separada por vírgula, onde o primeiro elemento antes da vírgula corresponde a uma ação que será realizada sobre um determinado sensor, ação essa,que neste caso, corresponde a geração/obtenção dos dados, já o segundo elemento após a vírgula identifica um sensor específico, que será alvo da ação citada anteriormente. Com relação à resposta enviada pelo dispositivo virtual, o primeiro elemento é o valor do dado gerado pelo sensor, o segundo elemento após a vírgula equivale a sensibilidade pela qual o dado foi gerado, por fim, temos um valor que pode ser “true”, ou “false”, este corresponde ao estado do sensor, isto é, ligado(true) ou desligado(false).
+No exemplo acima, o broker envia uma mensagem, que corresponde a uma string, esta é separada por vírgula, onde o primeiro elemento antes da vírgula corresponde a uma ação que será realizada sobre um determinado sensor, ação essa, que neste caso, corresponde a geração/obtenção dos dados, já o segundo elemento após a vírgula identifica um sensor específico, que será alvo da ação citada anteriormente. Com relação à resposta enviada pelo dispositivo virtual, o primeiro elemento é o valor do dado gerado pelo sensor, o segundo elemento após a vírgula equivale a sensibilidade pela qual o dado foi gerado, por fim, temos um valor que pode ser “true”, ou “false”, este corresponde ao estado do sensor, isto é, ligado(true) ou desligado(false).
 De modo geral, as mensagens foram separadas por vírgula, onde o primeiro elemento corresponde a ação que será realizada sobre o sensor e o segundo elemento é o sensor em específico.
+
+## Resultados
+### Interface
+A construção da interface se deu através do framework Angular.
+
+A interface conseguiu atingir os principais objetivos solicitados, estes foram: envio de comandos para um dispositivo virtual, seleção de um determinado dispositivo e exibição dos dados gerados pelos dispositivos.
+Os comandos implementados foram, ligar/desligar um determinado sensor, e alterar a sua sensibilidade para geração dos dados, sensibilidade essa que variou de 1 a 99.
+
+Na imagem abaixo é destacada a interface com um dispositivo selecionado, dispositivo esse correspondendo a um sensor sonoro com sensibilidade para geração dos dados igual a 10, além de exibir em um gráfico os valores gerados a cada solicitação.
+
+![Sensor Interface Show Case](https://github.com/Joanderson90/communication-between-different-apps/blob/main/sensor_interface_showcase.png)
+
+### Broker
+Para construção da API do broker foi utilizado o framework Spring Boot.
+Assim como a interface, o broker conseguiu cumprir com seu papel principal, papel esse que era permitir a comunicação entre os sistemas presentes no problema. Vale ressaltar que na arquitetura deste projeto, o broker atuou apenas como um intermediador da troca de mensagens entre o dispositivo virtual e a interface. Entretanto, o broker também poderia atuar como servidor, permitindo uma otimização de memória e processamento do dispositivo virtual.
+
+### Dispositivo Virtual
+Para construção do dispositivo virtual foram utilizados os sockets nativos da linguagem de programação JAVA.
+Por fim, o dispositivo virtual também cumpriu com seu papel no sistema, gerando dados dos sensores e enviando-os quando solicitados pela interface, além de receber os comandos vinculados aos sensores e tratá-los de maneira adequada.
+Cabe destacar que, neste projeto o dispositivo virtual além de gerar os dados dos sensores, também atuou como servidor.
+
+### Docker
+Cada aplicação acima possui uma imagem docker que foi disponibilizada no repositório online do docker hub. Para executar uma das aplicações é necessário abrir o terminal de sua preferência e ir para a pasta raiz da aplicação desejada e executar o seguinte comando:
+
 
