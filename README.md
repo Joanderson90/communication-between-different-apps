@@ -7,7 +7,7 @@ A comunicação é essencial em um sistema distribuído. Entretanto, nem sempre 
 
 Nesse sentido, foi solicitado aos alunos do curso de Engenharia de Computação da Universidade Estadual de Feira de Santana(UEFS), que desenvolvessem um sistema para permitir a comunicação e a troca de dados entre aplicações com infraestrutura diferentes.
 
-Este sistema foi desenvolvido utilizando sockets para permitir a comunicação cliente-servidor entre um broker(cliente) e um dispositivo virtual(servidor e sensor). Além disso, foi utilizada uma API REST para permitir a comunicação entre o dispositivo virtual e uma aplicação simples (interface), tendo como intermediador da comunicação o broker citado anteriormente. Consequentemente, o broker foi utilizado para permitir a comunicação entre o dispositivo virtual e a interface.  Já que a o dispositivo virtual não possuía capacidade para rodar servidores HTTP.
+Este sistema foi desenvolvido utilizando sockets para permitir a comunicação cliente-servidor entre um broker(cliente) e um dispositivo virtual(servidor e sensor). Além disso, foi utilizada uma API REST para permitir a comunicação entre o dispositivo virtual e uma aplicação simples (interface), tendo como intermediador da comunicação o broker citado anteriormente. Consequentemente, o broker foi utilizado para permitir a comunicação entre o dispositivo virtual e a interface.  Já que o dispositivo virtual não possuía capacidade para rodar servidores HTTP.
 
 Após o desenvolvimento do sistema em questão, foi utilizado containers docker para virtualização da aplicação e execução dos testes.
 
