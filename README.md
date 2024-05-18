@@ -54,14 +54,20 @@ Na imagem abaixo é destacada a interface com um dispositivo selecionado, dispos
 
 ### Broker
 Para construção da API do broker foi utilizado o framework Spring Boot.
+
 Assim como a interface, o broker conseguiu cumprir com seu papel principal, papel esse que era permitir a comunicação entre os sistemas presentes no problema. Vale ressaltar que na arquitetura deste projeto, o broker atuou apenas como um intermediador da troca de mensagens entre o dispositivo virtual e a interface. Entretanto, o broker também poderia atuar como servidor, permitindo uma otimização de memória e processamento do dispositivo virtual.
 
 ### Dispositivo Virtual
 Para construção do dispositivo virtual foram utilizados os sockets nativos da linguagem de programação JAVA.
+
 Por fim, o dispositivo virtual também cumpriu com seu papel no sistema, gerando dados dos sensores e enviando-os quando solicitados pela interface, além de receber os comandos vinculados aos sensores e tratá-los de maneira adequada.
 Cabe destacar que, neste projeto o dispositivo virtual além de gerar os dados dos sensores, também atuou como servidor.
 
 ### Docker
 Cada aplicação acima possui uma imagem docker que foi disponibilizada no repositório online do docker hub. Para executar uma das aplicações é necessário abrir o terminal de sua preferência e ir para a pasta raiz da aplicação desejada e executar o seguinte comando:
+
+```
+$ docker compose up
+```
 
 
